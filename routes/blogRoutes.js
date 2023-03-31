@@ -2,8 +2,6 @@ const express = require('express'),
 Blog= require('../models/blogModel'),
 router = express.Router();
 
-
-//videoda home çift tırnak
 router.get("/addNewBlog", isLoggedIn, (req, res)=>{
     res.render("blog/newBlog" );
  });
@@ -13,7 +11,6 @@ router.get("/addNewBlog", isLoggedIn, (req, res)=>{
    let comImage = req.body.data.comImage;
    let comSentence = req.body.data.comSentence;
    let blog = req.body.data.blog;
-
    let newBlog= { title:title, comImage:comImage, comSentence:comSentence,blog:blog };
 
    Blog.create(newBlog)
@@ -27,7 +24,6 @@ router.get("/addNewBlog", isLoggedIn, (req, res)=>{
     console.log(err);
     res.send(err);
    })
-   
  });
 
 router.get("/blogs/:blogId", async (req,res)=>{
@@ -54,7 +50,6 @@ res.json(foundBlogs);
     res.send(err);
 })
  });
-
 
  function isLoggedIn(req, res, next)
 {
