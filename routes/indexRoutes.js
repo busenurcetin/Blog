@@ -2,7 +2,6 @@ const express = require('express');
 router = express.Router();
 Blog = require('../models/blogModel');
 
-
 //ARRAY
 
 /*let data= [
@@ -37,9 +36,6 @@ Blog = require('../models/blogModel');
 
 //ARRAY Bitiş
 
-
-
-
 router.get("/", async (req, res)=>{
   try {
     const foundBlogs = await Blog.find({})
@@ -51,7 +47,6 @@ router.get("/", async (req, res)=>{
     console.log(err);
   }
 });
-
 
 router.get("/about", (req, res) => {
   res.render('about');
