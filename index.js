@@ -5,8 +5,6 @@ const mongoose = require("mongoose"),
     User= require("./models/userModel"),
     expressSession = require("express-session"),
     bodyParser = require("body-parser"),
-   
-
     app = express();
 
 const { application } = require("express");
@@ -18,24 +16,21 @@ const { Passport } = require("passport");
           adminRoutes = require("./routes/adminRoutes"),
           blogRoutes = require("./routes/blogRoutes");
 
-
-
     //App Config
 
 mongoose.connect("mongodb://localhost/BlogApp")
+
 //mongo connect check
 .then(() => console.log('Connected to MongoDB...'))
 .catch(err => console.error('Could not connect to MongoDB...', err));
 //mongo connect check end
+
 app.set('view engine' , 'ejs');
 app.use(express.static('public'));
-//Videoda yok
 app.use(express.static('js'));
-//Videoda yok
 app.use(bodyParser.urlencoded({extended:true}));
 
 //Passport Config
-
 app.use(require("express-session")({
      secret: "bu güvenlik cümlesi",
      resave: false,
@@ -57,8 +52,6 @@ app.use((req, res, next)=>
   next();
 });
 
-
-
 //Routes Using
 
 app.use(indexRoutes);
@@ -71,9 +64,7 @@ const server = app.listen(3000, (err)=> {
     if(err){
       console.log(err);
     }
-
       console.log('App Started. Port number  : %d ', server.address().port);
-
 })
 
 
