@@ -6,12 +6,7 @@ var blogSchema = new mongoose.Schema({
     comImage : {type: String, required: 'Cannot be empty'},
     blog: {type: String, required: 'Cannot be empty'},
     date: {type: Date, default: Date.now},
-    
-
-
-
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
-
 module.exports = Blog;
