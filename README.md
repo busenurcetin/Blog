@@ -4,7 +4,6 @@ Welcome to the blog site. I made it by using CSS,NodeJS, ExpressJS, JavaScript a
 
 Made by Buse Nur Çetin
 
-
 First, run the server:
 
 ```bash
@@ -27,4 +26,4 @@ use BlogApp;
 db.users.find();
 ```
 
-If you want to help me out on developing this blog you can be my contributions and we can develop it together!
+If you want to help me out on developing this blog you can be my contributor and we can develop it together!
