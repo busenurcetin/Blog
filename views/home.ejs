@@ -1,45 +1,51 @@
 <%- include ('./partials/header') %>
-      <!-- Page Header-->
-      <header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1627133805103-ce2d34ccdd37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
-        <div class="container position-relative px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
-                    </div>
-                </div>
-            </div>
+<!-- Page Header-->
+<header
+  class="masthead"
+  style="
+    background-image: url('https://images.unsplash.com/photo-1627133805103-ce2d34ccdd37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+  "
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Clean Blog</h1>
+          <span class="subheading">A Blog Theme by Start Bootstrap</span>
         </div>
-    </header>
-    <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
-        <% foundBlogs.forEach( (blog)=>{ %>
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-3 mx-auto">
-                <img class="img-thumbnail" src="<%= blog.comImage%>"  alt="Post Image">
-            </div>
-            <div class=" col-lg-9 col-xl-7">
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="/blogs/<%= blog._id%>" >
-                        <h2 class="post-title">  <%= blog.title %></h2>
-                        <h3 class="post-subtitle"> <%= blog.comSentence %></h3>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        <%= blog.date %>
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!--İlk POST-->
-            </div>
-        </div>
-        <% }); %>
-        <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+      </div>
     </div>
+  </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+  <% foundBlogs.forEach( (blog)=>{ %>
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-lg-3 mx-auto">
+      <img class="img-thumbnail" src="<%= blog.comImage%>" alt="Post Image" />
+    </div>
+    <div class="col-lg-9 col-xl-7">
+      <!-- Post preview-->
+      <div class="post-preview">
+        <a href="/blogs/<%= blog._id%>">
+          <h2 class="post-title"><%= blog.title %></h2>
+          <h3 class="post-subtitle"><%= blog.comSentence %></h3>
+        </a>
+        <p class="post-meta">
+          Posted by
+          <a href="#!">Start Bootstrap</a>
+          <%= blog.date %>
+        </p>
+      </div>
+      <!-- Divider-->
+      <hr class="my-4" />
+      <!--İlk POST-->
+    </div>
+  </div>
+  <% }); %>
+  <div class="d-flex justify-content-end mb-4">
+    <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
+  </div>
+</div>
 
-    <%- include ('./partials/footer') %>
-   
+<%- include ('./partials/footer') %>

@@ -1,8 +1,6 @@
-const express = require('express');
-router = express.Router();
-Blog = require('../models/blogModel');
-
-//ARRAY
+import { Router } from "express";
+const router = Router();
+import Blog from "../models/blogModel";
 
 /*let data= [
     {
@@ -34,14 +32,12 @@ Blog = require('../models/blogModel');
 //yukarıdaki kodlar eskiden çektiğim veriler için kullandığım kodlardır.
 //The code above is the code I used for the data I fetched before.
 
-//ARRAY Bitiş
-
-router.get("/", async (req, res)=>{
+router.get("/", async (req, res) => {
   try {
-    const foundBlogs = await Blog.find({})
+    const foundBlogs = await Blog.find({});
     console.log("========= ALL BLOGS ============");
     console.log(foundBlogs);
-    res.render("home", {foundBlogs:foundBlogs});
+    res.render("home", { foundBlogs: foundBlogs });
   } catch (err) {
     console.log("========= ERROR =========");
     console.log(err);
@@ -49,12 +45,11 @@ router.get("/", async (req, res)=>{
 });
 
 router.get("/about", (req, res) => {
-  res.render('about');
+  res.render("about");
 });
 
 router.get("/contact", (req, res) => {
-  res.render('contact');
+  res.render("contact");
 });
 
-module.exports = router;
-
+export default router;
